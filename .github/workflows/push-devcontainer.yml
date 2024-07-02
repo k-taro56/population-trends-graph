@@ -2,6 +2,8 @@ name: Push DevContainer
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   push-devcontainer:
