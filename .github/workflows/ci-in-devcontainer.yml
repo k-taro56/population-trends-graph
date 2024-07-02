@@ -1,0 +1,20 @@
+name: CI in DevContainer
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ci-in-devcontainer:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Export
+        uses: devcontainers/ci@v0.3
+        with:
+          cacheFrom: k-taro56/population-trends-graph-devcontainer
+          push: never
+          runCmd: pnpm build
