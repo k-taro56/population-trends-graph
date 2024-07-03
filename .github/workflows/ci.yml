@@ -7,6 +7,8 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
 
     steps:
       - name: Checkout
@@ -29,3 +31,10 @@ jobs:
 
       - name: Check format
         run: pnpm format:check
+
+      - name: Run tests
+        run: pnpm test:ci
+
+      - uses: codecov/codecov-action@v4
+        with:
+          use_oidc: true
