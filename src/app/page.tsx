@@ -9,7 +9,7 @@ import Loading from '@/components/loading';
 import PrefectureList from '@/components/prefecture-list';
 import PopulationChart from '@/components/population-chart';
 import Footer from '@/components/footer';
-import styles from './page.module.css';
+import styles from './styles/page.module.css';
 
 export default function Home() {
   const [selectedPrefectures, setSelectedPrefectures] = useState<number[]>([]);

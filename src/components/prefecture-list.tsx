@@ -1,5 +1,5 @@
 import type { Prefecture } from '@/types';
-import styles from './prefecture-list.module.css';
+import styles from './styles/prefecture-list.module.css';
 
 interface PrefectureListProps {
   prefectures: Prefecture[];

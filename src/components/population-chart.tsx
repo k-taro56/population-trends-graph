@@ -2,7 +2,7 @@ import Highcharts, { type Options } from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
 import type { PopulationComposition } from '@/types';
-import styles from './population-chart.module.css';
+import styles from './styles/population-chart.module.css';
 
 interface PopulationChartProps {
   populationCompositions: PopulationComposition[];
