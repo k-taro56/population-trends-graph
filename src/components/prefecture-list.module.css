@@ -1,0 +1,37 @@
+.prefectureList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+  gap: 0.625rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.prefectureItem {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.prefectureItem input {
+  margin-right: 0.25rem;
+}
+
+@media (max-width: 48rem) {
+  .prefectureList {
+    grid-template-columns: repeat(auto-fill, minmax(6.25rem, 1fr));
+  }
+
+  .prefectureItem {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .prefectureList {
+    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+  }
+
+  .prefectureItem {
+    font-size: 0.75rem;
+  }
+}
