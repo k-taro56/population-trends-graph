@@ -1,0 +1,18 @@
+.chartContainer {
+  margin-top: 1.25rem;
+}
+
+.select {
+  display: block;
+  width: 100%;
+  max-width: 20rem;
+  margin: 0 auto 20px;
+  padding: 0.625rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 48rem) {
+  .select {
+    font-size: 0.875rem;
+  }
+}
