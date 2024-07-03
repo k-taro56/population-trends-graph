@@ -27,4 +27,20 @@ describe('Home component', () => {
       expect(screen.getByText('Tokyo')).toBeInTheDocument();
     });
   });
+
+  it('displays message when no prefecture is selected', async () => {
+    const mockPrefectures = [{ prefCode: 1, prefName: 'Tokyo' }];
+    (usePrefectures as jest.Mock).mockReturnValue({ data: mockPrefectures });
+    (usePopulationCompositions as jest.Mock).mockReturnValue({
+      data: null,
+      isLoading: false,
+    });
+
+    render(<Home />);
+    await waitFor(() => {
+      expect(
+        screen.getByText('都道府県を選択してください。'),
+      ).toBeInTheDocument();
+    });
+  });
 });
