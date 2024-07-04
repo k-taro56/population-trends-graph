@@ -12,6 +12,18 @@ import PopulationChart from '@/components/population-chart';
 import Footer from '@/components/footer';
 import styles from './styles/page.module.css';
 
+export const updateSelectedPrefectures = (
+  prefecture: Prefecture,
+  isSelected: boolean,
+  currentSelectedPrefectures: Prefecture[],
+) => {
+  return isSelected
+    ? [...currentSelectedPrefectures, prefecture]
+    : currentSelectedPrefectures.filter(
+        (p) => p.prefCode !== prefecture.prefCode,
+      );
+};
+
 export default function Home() {
   const [selectedPrefectures, setSelectedPrefectures] = useState<Prefecture[]>(
     [],
@@ -22,11 +34,12 @@ export default function Home() {
   const { data: populationCompositions, isLoading } =
     usePopulationCompositions(selectedPrefectures);
 
-  const handlePrefectureChange = (prefecture: Prefecture, checked: boolean) => {
-    setSelectedPrefectures((prev) =>
-      checked
-        ? [...prev, prefecture]
-        : prev.filter((p) => p.prefCode !== prefecture.prefCode),
+  const onSelectedPrefectureChange = (
+    prefecture: Prefecture,
+    isSelected: boolean,
+  ) => {
+    setSelectedPrefectures((current) =>
+      updateSelectedPrefectures(prefecture, isSelected, current),
     );
   };
 
@@ -49,7 +62,7 @@ export default function Home() {
         {prefectures ? (
           <PrefectureList
             prefectures={prefectures}
-            onPrefectureChange={handlePrefectureChange}
+            onPrefectureChange={onSelectedPrefectureChange}
           />
         ) : (
           <Loading />
