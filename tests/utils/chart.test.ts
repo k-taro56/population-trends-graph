@@ -2,10 +2,10 @@ import { getChartOptions } from '@/utils/chart';
 import type { Prefecture, PopulationComposition } from '@/types';
 
 describe('getChartOptions', () => {
-  const mockPrefectures: Prefecture[] = [
-    { prefCode: 1, prefName: '北海道' },
-    { prefCode: 2, prefName: '青森県' },
-  ];
+  const hokkaido: Prefecture = { prefCode: 1, prefName: '北海道' };
+  const aomori: Prefecture = { prefCode: 2, prefName: '青森県' };
+
+  const selectedPrefectures = [hokkaido, aomori];
 
   const mockPopulationCompositions: PopulationComposition[] = [
     {
@@ -35,11 +35,9 @@ describe('getChartOptions', () => {
   ];
 
   it('should return correct chart options', () => {
-    const selectedPrefectures = [1, 2];
     const label = '総人口';
 
     const result = getChartOptions(
-      mockPrefectures,
       mockPopulationCompositions,
       selectedPrefectures,
       label,
@@ -70,23 +68,8 @@ describe('getChartOptions', () => {
     });
   });
 
-  it('should return empty series when prefectures is undefined', () => {
-    const result = getChartOptions(
-      undefined,
-      mockPopulationCompositions,
-      [1, 2],
-      '総人口',
-    );
-    expect(result.series).toEqual([]);
-  });
-
   it('should return empty series when populationCompositions is undefined', () => {
-    const result = getChartOptions(
-      mockPrefectures,
-      undefined,
-      [1, 2],
-      '総人口',
-    );
+    const result = getChartOptions(undefined, [hokkaido, aomori], '総人口');
     expect(result.series).toEqual([]);
   });
 });

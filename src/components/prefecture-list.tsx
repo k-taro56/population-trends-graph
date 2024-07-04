@@ -3,7 +3,7 @@ import styles from './styles/prefecture-list.module.css';
 
 interface PrefectureListProps {
   prefectures: Prefecture[];
-  onPrefectureChange: (prefCode: number, checked: boolean) => void;
+  onPrefectureChange: (prefecture: Prefecture, checked: boolean) => void;
 }
 
 const PrefectureList = ({
@@ -17,9 +17,7 @@ const PrefectureList = ({
           <input
             type='checkbox'
             value={prefecture.prefCode}
-            onChange={(e) =>
-              onPrefectureChange(prefecture.prefCode, e.target.checked)
-            }
+            onChange={(e) => onPrefectureChange(prefecture, e.target.checked)}
           />
           {prefecture.prefName}
         </label>
