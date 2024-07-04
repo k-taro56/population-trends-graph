@@ -2,11 +2,15 @@ import type { SeriesOptionsType } from 'highcharts';
 
 import type { PopulationComposition, Prefecture } from '@/types';
 
-export const getChartOptions = (
-  populationCompositions: PopulationComposition[] | undefined,
-  selectedPrefectures: Prefecture[],
-  label: string,
-) => {
+export const getChartOptions = ({
+  populationCompositions,
+  selectedPrefectures,
+  label,
+}: {
+  populationCompositions: PopulationComposition[] | undefined;
+  selectedPrefectures: Prefecture[];
+  label: string;
+}) => {
   const series: SeriesOptionsType[] =
     populationCompositions?.map((populationComposition, index) => {
       const selectedPrefecture = selectedPrefectures[index];

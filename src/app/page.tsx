@@ -32,11 +32,11 @@ export default function Home() {
     );
   };
 
-  const chartOptions = getChartOptions(
+  const chartOptions = getChartOptions({
     populationCompositions,
     selectedPrefectures,
     label,
-  );
+  });
 
   useEffect(() => {
     if (populationCompositions?.[0] && !label) {
