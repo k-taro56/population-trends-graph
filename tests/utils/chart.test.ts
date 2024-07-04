@@ -37,11 +37,11 @@ describe('getChartOptions', () => {
   it('should return correct chart options', () => {
     const label = '総人口';
 
-    const result = getChartOptions(
-      mockPopulationCompositions,
+    const result = getChartOptions({
+      populationCompositions: mockPopulationCompositions,
       selectedPrefectures,
       label,
-    );
+    });
 
     expect(result).toEqual({
       title: { text: '都道府県別の総人口推移' },
@@ -69,7 +69,11 @@ describe('getChartOptions', () => {
   });
 
   it('should return empty series when populationCompositions is undefined', () => {
-    const result = getChartOptions(undefined, [hokkaido, aomori], '総人口');
+    const result = getChartOptions({
+      populationCompositions: undefined,
+      selectedPrefectures,
+      label: '総人口',
+    });
     expect(result.series).toEqual([]);
   });
 });
