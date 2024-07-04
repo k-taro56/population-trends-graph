@@ -1,37 +1,52 @@
 .prefectureList {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
-  gap: 0.625rem;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 0.5rem;
 }
 
 .prefectureItem {
   display: flex;
   align-items: center;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.prefectureItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .prefectureItem input {
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
 }
 
 @media (max-width: 48rem) {
   .prefectureList {
-    grid-template-columns: repeat(auto-fill, minmax(6.25rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
   }
 
   .prefectureItem {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 30rem) {
   .prefectureList {
-    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
+    gap: 0.5rem;
   }
 
   .prefectureItem {
     font-size: 0.75rem;
+    padding: 0.4rem;
   }
 }
