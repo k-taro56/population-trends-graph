@@ -31,7 +31,10 @@ describe('Hooks', () => {
       };
       (fetcher as jest.Mock).mockResolvedValue(mockPopulationComposition);
 
-      const selectedPrefectures = [1, 2];
+      const selectedPrefectures = [
+        { prefCode: 1, prefName: '北海道' },
+        { prefCode: 2, prefName: '青森県' },
+      ];
       const { result } = renderHook(() =>
         usePopulationCompositions(selectedPrefectures),
       );

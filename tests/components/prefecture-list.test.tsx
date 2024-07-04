@@ -36,6 +36,9 @@ describe('PrefectureList Component', () => {
 
     fireEvent.click(checkbox);
 
-    expect(mockOnChange).toHaveBeenCalledWith(1, true);
+    expect(mockOnChange).toHaveBeenCalledWith(
+      { prefCode: 1, prefName: 'Hokkaido' },
+      true,
+    );
   });
 });

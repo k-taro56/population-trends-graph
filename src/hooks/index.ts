@@ -8,12 +8,14 @@ export const usePrefectures = () => {
   return useSWR(`${origin}/prefectures`, fetcher<Prefecture[]>);
 };
 
-export const usePopulationCompositions = (selectedPrefectures: number[]) => {
+export const usePopulationCompositions = (
+  selectedPrefectures: Prefecture[],
+) => {
   return useSWR(
     0 < selectedPrefectures.length
       ? selectedPrefectures.map(
-          (prefCode) =>
-            `${origin}/population/composition/perYear?cityCode=-&prefCode=${prefCode}`,
+          (prefecture) =>
+            `${origin}/population/composition/perYear?cityCode=-&prefCode=${prefecture.prefCode}`,
         )
       : [],
     (urls: string[]) => Promise.all(urls.map(fetcher<PopulationComposition>)),
