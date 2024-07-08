@@ -45,6 +45,7 @@ describe('getChartOptions', () => {
 
     expect(result).toEqual({
       title: { text: '都道府県別の総人口推移' },
+      subtitle: { text: '破線は推計値' },
       xAxis: { title: { text: '年度' } },
       yAxis: { title: { text: '人口数' } },
       series: [
@@ -55,6 +56,15 @@ describe('getChartOptions', () => {
             [2015, 5381733],
             [2020, 5224614],
           ],
+          zoneAxis: 'x',
+          zones: [
+            {
+              value: 2020,
+            },
+            {
+              dashStyle: 'Dot',
+            },
+          ],
         },
         {
           type: 'line',
@@ -62,6 +72,15 @@ describe('getChartOptions', () => {
           data: [
             [2015, 1308265],
             [2020, 1237984],
+          ],
+          zoneAxis: 'x',
+          zones: [
+            {
+              value: 2020,
+            },
+            {
+              dashStyle: 'Dot',
+            },
           ],
         },
       ],
