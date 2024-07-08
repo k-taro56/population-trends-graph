@@ -13,14 +13,16 @@ const PrefectureList = ({
   return (
     <div className={styles.prefectureList}>
       {prefectures.map((prefecture) => (
-        <label key={prefecture.prefCode} className={styles.prefectureItem}>
-          <input
-            type='checkbox'
-            value={prefecture.prefCode}
-            onChange={(e) => onPrefectureChange(prefecture, e.target.checked)}
-          />
-          {prefecture.prefName}
-        </label>
+        <div key={prefecture.prefCode} className={styles.prefectureItem}>
+          <label>
+            <input
+              type='checkbox'
+              value={prefecture.prefCode}
+              onChange={(e) => onPrefectureChange(prefecture, e.target.checked)}
+            />
+            {prefecture.prefName}
+          </label>
+        </div>
       ))}
     </div>
   );
