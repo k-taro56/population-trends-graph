@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       highcharts:
-        specifier: ^11.4.5
-        version: 11.4.5
+        specifier: ^11.4.6
+        version: 11.4.6
       highcharts-react-official:
         specifier: ^3.2.1
-        version: 3.2.1(highcharts@11.4.5)(react@18.3.1)
+        version: 3.2.1(highcharts@11.4.6)(react@18.3.1)
       next:
         specifier: 14.2.4
         version: 14.2.4(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1425,8 +1425,8 @@ packages:
       highcharts: '>=6.0.0'
       react: '>=16.8.0'
 
-  highcharts@11.4.5:
-    resolution: {integrity: sha512-jUkojddxLFhyfZ+naLsRtYv/NjXEptcZ0/8bqSSS2aoz9sU80rb4LBJlYfyRFHBGw5sMkUqeaXsv66J49O8n7A==}
+  highcharts@11.4.6:
+    resolution: {integrity: sha512-ntFZ053giEEquAxza+HlOWiLQyCLOjQ3M3EV4r6LoSNKS/fz2S0EKGl8G7Jls9EaYmdAHecB/vL4hGI2J1Ud9g==}
 
   html-encoding-sniffer@3.0.0:
     resolution: {integrity: sha512-oWv4T4yJ52iKrufjnyZPkrN0CH3QnrUqdB6In1g5Fe1mia8GmF36gnfNySxoZtxD5+NmYw1EElVXiBk93UeskA==}
@@ -4423,12 +4423,12 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  highcharts-react-official@3.2.1(highcharts@11.4.5)(react@18.3.1):
+  highcharts-react-official@3.2.1(highcharts@11.4.6)(react@18.3.1):
     dependencies:
-      highcharts: 11.4.5
+      highcharts: 11.4.6
       react: 18.3.1
 
-  highcharts@11.4.5: {}
+  highcharts@11.4.6: {}
 
   html-encoding-sniffer@3.0.0:
     dependencies:
