@@ -2,5 +2,6 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "framework": "nextjs",
-  "installCommand": "pnpm install --frozen-lockfile --ignore-scripts"
+  "installCommand": "pnpm install --frozen-lockfile --ignore-scripts",
+  "regions": ["hnd1"]
 }
