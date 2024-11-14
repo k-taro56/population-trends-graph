@@ -35,6 +35,6 @@ jobs:
       - name: Run tests
         run: pnpm test:ci
 
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v5
         with:
           use_oidc: true
